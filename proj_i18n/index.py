@@ -8,6 +8,7 @@ from flask import (
 from flask_babel import (
     Babel,
     format_datetime,
+    gettext,
     lazy_gettext,
     refresh,
 )
@@ -15,9 +16,15 @@ from flask_babel import (
 app = Flask(__name__)
 babel = Babel(app)
 
+@app.route('/')
+def index():
+    hello = gettext('Hello World')
+    return render_template('index.html', hello=hello)
 
 @app.route('/hello/<name>')
 def hello(name=None):
+    if not name:
+        return gettext('No user')
     now = arrow.now()
     time = format_datetime(now, 'EEEE, d. MMMM yyyy H:mm')
     name = lazy_gettext(name)
