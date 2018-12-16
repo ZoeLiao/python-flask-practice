@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-20 20:23+0800\n"
+"POT-Creation-Date: 2018-10-23 16:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: index.py:21
+#: index.py:20
+msgid "Good afternoon！"
+msgstr ""
+
+#: index.py:24
 msgid "Hello World"
 msgstr ""
 
-#: index.py:27
-msgid "No user"
+#: index.py:39
+#, python-format
+msgid ""
+"Hello %(name)s,\n"
+" Now is %(time)s,\n"
+"Your house provident fund is %(money)s"
+msgstr ""
+
+#: templates/hello.html:6
+msgid "Oops! User not found! QQ. Please enter your name."
 msgstr ""
 

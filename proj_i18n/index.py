@@ -11,24 +11,34 @@ from flask_babel import (
     gettext,
     lazy_gettext,
     refresh,
+    format_currency,
 )
 
 app = Flask(__name__)
 babel = Babel(app)
+
+#另外如果你希望在你的应用中使用常量字符串并且在请求之外定义它们的话，你可以使用一个“懒惰”字符串。“懒惰”字符串直到它们实际被使用的时候才会计算。为了使用一个“懒惰”字符串，请使用 lazy_gettext() 函数:
+greeting = lazy_gettext('Good afternoon！')
 
 @app.route('/')
 def index():
     hello = gettext('Hello World')
     return render_template('index.html', hello=hello)
 
-@app.route('/hello/<name>')
+@app.route('/lazy/')
+def greeting():
+    return render_template('index.html', hello=greeting)
+
+@app.route('/hello/<name>/')
 def hello(name=None):
-    if not name:
-        return gettext('No user')
+    paragraph = None
     now = arrow.now()
     time = format_datetime(now, 'EEEE, d. MMMM yyyy H:mm')
-    name = lazy_gettext(name)
-    return render_template('hello.html', name=name, time=time)
+    money = format_currency(1000000, 'CNY')
+    if name != 'Nobody':
+        paragraph = 'Hello %(name)s,\n Now is %(time)s,\nYour house provident fund is %(money)s'
+        paragraph = gettext('Hello %(name)s,\n Now is %(time)s,\nYour house provident fund is %(money)s', name=name, time=time, money=money) 
+    return render_template('hello.html', paragraph=paragraph)
 
 @babel.localeselector
 def get_locale():
