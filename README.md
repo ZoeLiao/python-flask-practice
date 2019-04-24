@@ -10,8 +10,12 @@ Flask 是由 Armin Ronacher 用 Python 編寫的輕量級 Web 應用框架。基
 練習基本的 flask，並用 Bootstrap 4.1 製作頁面
 [Bootstrap 4.1 文檔](https://getbootstrap.com/)
 
-## proj_i18n:
+## i18n:
 練習 flask 插件 Flask-Babel 實現國際化（i18n, internationalization）
 
 ### Flask-Babel
 - 基於[babel](https://github.com/python-babel/babel)、[pytz](https://pypi.python.org/pypi/pytz/)，支持 i18n 與 L10n的 flask 庫[Flask-Babel](https://github.com/python-babel/babel)
+
+## mail
+練習用 flask 寄信
+[Flask-Mail 文檔](https://pythonhosted.org/Flask-Mail/)
