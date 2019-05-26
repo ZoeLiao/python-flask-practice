@@ -9,6 +9,19 @@ Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quick
 
 ## How to use
 - 創建虛擬環境：`virtualenv venv`
-- 運行 `python app.py`，訪問 [127.0.0.1:9000](127.0.0.1:9000)
+- 運行 `python app.py`，訪問 [127.0.0.1:5000](127.0.0.1:5000)
 - 如果想要方便debug：`export FLASK_ENV=development`
 
+## Docker
+- [Docker](https://docs.docker.com/)
+- 打包成鏡像：
+    - `docker build -t python-docker-dev .`
+- 查看鏡像：
+    - `docker images`
+- 運行鏡像(-d: 後台運行)：
+    - `docker run --rm -it -d -p 9000:5000 python-docker-dev`
+
+- 查看 Docker 運行中的容器：
+    - `docker ps -a`
+- 停止運行中的容器：
+    - `docker stop <container ID>`
