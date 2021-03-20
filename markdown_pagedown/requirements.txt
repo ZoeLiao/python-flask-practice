@@ -4,7 +4,7 @@ Flask-Markdown==0.3
 Flask-PageDown==0.2.2
 Flask-WTF==0.14.2
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 Markdown==3.1.1
 MarkupSafe==1.1.1
 Werkzeug==0.15.5
